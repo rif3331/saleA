@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        table {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-collapse: collapse;
+
+        }
+
+        tr {
+            border: 1pt solid black;
+        }
+
+
+        /* Style the header */
+        #header {
+            width: 100%;
+            position: fixed;
+            height: 400px;
+            transition: 0.2s;
+            background-color: #cccccc;
+            width: 612px;
+        }
+
+
+
+        .image {
+            width: 209px;
+            height: 200px;
+            opacity: 1;
+            display: block;
+            transition: .5s ease;
+            backface-visibility: hidden;
+            background-image: none;
+        }
+    </style>
+    <script>
+        // When the user scrolls down 50px from the top of the document, resize the header's font size
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("logo").style.height = "200px";
+                document.getElementById("header").style.height = "100px";
+                document.getElementById("header").style.paddingLeft = "150px";
+                document.getElementById("tableDiv").style.marginTop = "230px";
+                document.getElementById("firstRow").innerHTML = "";
+
+            }
+
+            else {
+                document.getElementById("logo").style.height = "400px";
+                document.getElementById("header").style.height = "400px";
+                document.getElementById("header").style.left = "0%";
+                document.getElementById("header").style.paddingLeft = "0px";
+                document.getElementById("tableDiv").style.marginTop = "400px";
+                document.getElementById("firstRow").innerHTML = '  ברוכים הבאים ל"סייל" <br>אתר מכירות יד שנייה<br> לצפייה בפרטים לחיצה קצרה,<br> להגדלת התמונה לחיצה ארוכה';
+
+
+
+
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function changeBackground(url) {
+            for (var i = 0; i < imageUrl.length; i++) {
+                document.getElementById("products" + i.toString()).style.backgroundImage = "url(" + url + ")";
+            }
+        }
+        const nameProduct = new Array(
+         /*/1/*/   "שמלה שחורה",
+        /*/2/*/  "שמלה תכלת",
+            /*/3/*/"טופ ביקיני",
+          /*/4/*/  "תרסיס נגד יתושים",
+          /*/5/*/  "כובע אדום",
+          /*/6/*/  "תיק צד",
+          /*/7/*/  "שעון",
+          /*/8/*/  "כובע",
+            "שמלה לבנה",
+            "שמלה שחורה",
+            "מגפיים",
+            "כובע לבן",
+            "שמלה צהובה",
+            "מגפיים",
+            "מגפיים",
+            "כובע לבן",
+            "מגפיים",
+            "חולצה ירוקה",
+            "כובע לבן",
+            "שמלה כחולה",
+            "שמלה צהובה",
+            "כובע שחור",
+            "שמלה ירוקה",
+            "כובע לבן"
+        );
+        const price = new Array(
+            "269",
+            "269",
+            "129",
+            "400",
+            "300",
+            "200",
+            "600",
+            "1000",
+            "400",
+            "450",
+            "150",
+            "300",
+            "15",
+            "300",
+            "80",
+            "100",
+            "120",
+            "105",
+            "205",
+            "400",
+            "450",
+            "150",
+            "300",
+            "442"
+        );
+        const imageUrl = new Array(
+            "https://i.im.ge/2022/06/21/uTXENc.png☼https://i.im.ge/2022/06/21/uTXxfL.png☼https://i.im.ge/2022/06/21/uTXYrG.png☼https://i.im.ge/2022/06/21/uTXb5x.png",
+            "https://i.im.ge/2022/06/21/uTXRIy.png☼https://i.im.ge/2022/06/21/uTX8MJ.png☼https://i.im.ge/2022/06/21/uTXZJz.png",
+            "https://i.im.ge/2022/06/21/uTXkfK.png☼https://i.im.ge/2022/06/21/uTXv88.png☼https://i.im.ge/2022/06/21/uTXnQh.png",
+            "https://i.im.ge/2022/06/18/rGoTTz.png",
+            "https://i.im.ge/2022/06/18/rGo2Oh.png",
+            "https://i.im.ge/2022/06/18/rGoFyX.png☼https://i.im.ge/2022/06/18/rGoTTz.png",
+            "https://i.im.ge/2022/06/18/rGoFyX.png",
+            "https://i.im.ge/2022/06/18/rGoTTz.png",
+            "https://i.im.ge/2022/06/18/rGo2Oh.png",
+            "https://i.im.ge/2022/06/18/rGoFyX.png",
+            "https://i.im.ge/2022/06/18/rGoTTz.png",
+            "https://i.im.ge/2022/06/18/rGo2Oh.png",
+            "https://i.im.ge/2022/06/18/rGo2Oh.png",
+            "https://i.im.ge/2022/06/18/rGoFyX.png",
+            "https://i.im.ge/2022/06/18/rGoTTz.png",
+            "https://i.im.ge/2022/06/18/rGo2Oh.png",
+            "https://i.im.ge/2022/06/18/rGoFyX.png",
+            "https://i.im.ge/2022/06/18/rGoTTz.png",
+            "https://i.im.ge/2022/06/18/rGo2Oh.png",
+            "https://i.im.ge/2022/06/18/rGoFyX.png",
+            "https://i.im.ge/2022/06/18/rGoTTz.png",
+            "https://i.im.ge/2022/06/18/rGo2Oh.png",
+            "https://i.im.ge/2022/06/18/rGoFyX.png",
+            "https://i.im.ge/2022/06/18/rGoTTz.png"
+        );
+        function displayProducts() {
+            var tableProducts = document.getElementById("displayProducts");
+
+            for (var i = 0; i < imageUrl.length; i++) {
+                var imageOne = imageUrl[i].split('☼');
+                if (i % 2 == 0)
+                    var row = tableProducts.insertRow(-1);
+                row.style.borderBottom = "solid";
+
+                var cell0 = row.insertCell(-1);
+                cell0.style.borderLeft = "solid";
+                cell0.innerHTML = "<img id='back" + i.toString() + "'src='https://i.im.ge/2022/06/20/uQnb0z.png' style='cursor:pointer;width: 37px;height: 37px;'>";
+
+                cell0.innerHTML += "<a id=aback" + i.toString() + " style='display:none;'>0^" + imageUrl[i] + "</a>";
+                if (imageOne.length == "1") {
+                    cell0.style.visibility = "hidden";
+                }
+                cell0.onclick = function () {
+                    var content = this.innerHTML;
+                    var importentData = content.slice(content.indexOf("display:none") + 15, content.indexOf("</a>"));
+                    var aImportentData = importentData.split('^');
+                    var numberImage = aImportentData[0];
+                    var linkImage = aImportentData[1];
+                    var imageChoose = linkImage.split('☼');
+                    // alert(parseInt(numberImage)+1);
+                    //לשנות את ה8 בFORWARD
+                    var numberCoulman = content.slice(content.indexOf("id=") + 8, content.indexOf(" src=") - 1);
+                    var centerLinkImage = document.getElementById("products" + numberCoulman).src;
+
+                    var indexImage = imageChoose[parseInt(numberImage) - 1];
+
+                    if (indexImage == undefined) {
+                        indexImage = imageChoose[imageChoose.length - 1];
+                        document.getElementById("aback" + numberCoulman).innerHTML = parseInt(imageChoose.length - 1).toString() + "^" + linkImage;
+                        document.getElementById("afoward" + numberCoulman).innerHTML = parseInt(imageChoose.length - 1).toString() + "^" + linkImage;
+                        for (var i = 0; i < imageChoose.length; i++) {
+                            if (i != (parseInt(imageChoose.length)).toString()) {
+                                document.getElementById(i.toString() + "point" + numberCoulman).src = "https://i.im.ge/2022/06/21/uTlHy0.png";
+                                document.getElementById(i.toString() + "point" + numberCoulman).style.width = "36px";
+                                document.getElementById(i.toString() + "point" + numberCoulman).style.height = "39px";
+                                document.getElementById(i.toString() + "point" + numberCoulman).style.top = "2px";
+                            }
+                        }
+                        document.getElementById(parseInt(imageChoose.length - 1).toString() + "point" + numberCoulman).src = "https://i.im.ge/2022/06/21/uTll9P.png";
+                        document.getElementById(parseInt(imageChoose.length - 1).toString() + "point" + numberCoulman).style.width = "40px";
+                        document.getElementById(parseInt(imageChoose.length - 1).toString() + "point" + numberCoulman).style.height = "41px";
+                        document.getElementById(parseInt(imageChoose.length - 1).toString() + "point" + numberCoulman).style.top = "0px";
+                      
+                    }
+                    else {
+                        document.getElementById("aback" + numberCoulman).innerHTML = (parseInt(numberImage) - 1).toString() + "^" + linkImage;
+                        document.getElementById("afoward" + numberCoulman).innerHTML = (parseInt(numberImage) - 1).toString() + "^" + linkImage;
+                        for (var i = imageChoose.length; i > 0; i--) {
+                            if (i != (parseInt(imageChoose.length)).toString()) {
+                                document.getElementById(i.toString() + "point" + numberCoulman).src = "https://i.im.ge/2022/06/21/uTlHy0.png";
+                                document.getElementById(i.toString() + "point" + numberCoulman).style.width = "36px";
+                                document.getElementById(i.toString() + "point" + numberCoulman).style.height = "39px";
+                                document.getElementById(i.toString() + "point" + numberCoulman).style.top = "2px";
+                            }
+                        }
+                        document.getElementById((parseInt(numberImage) - 1).toString() + "point" + numberCoulman).src = "https://i.im.ge/2022/06/21/uTll9P.png";
+                        document.getElementById((parseInt(numberImage) - 1).toString() + "point" + numberCoulman).style.width = "40px";
+                        document.getElementById((parseInt(numberImage) - 1).toString() + "point" + numberCoulman).style.height = "41px";
+                        document.getElementById((parseInt(numberImage) - 1).toString() + "point" + numberCoulman).style.top = "0px";
+                        
+
+                    }
+                    document.getElementById("products" + numberCoulman).src = indexImage;
+
+                    // alert(document.getElementById("aback" + numberCoulman).innerHTML);
+
+
+                }
+
+
+
+                var cell1 = row.insertCell(-1);
+                cell1.style.fontSize = "30px";
+                cell1.style.direction = "rtl"; cell1.style.textAlign = "center";
+                cell1.innerHTML = nameProduct[i];
+                cell1.innerHTML += "<img id='products" + i.toString() + "' src='" + imageOne[0] + "'class='image'>";
+                cell1.style.textAlign = "center";
+                // alert(imageOne.length);
+                for (var n = imageOne.length - 1; n > 0; n--) {
+                    cell1.innerHTML += "<img id='" + n.toString() + "point" + i.toString() + "' style='width:36px;height:39px;position:relative;top:2px' src='https://i.im.ge/2022/06/21/uTlHy0.png'>";
+                }
+                cell1.innerHTML += "<img id='0point" + i.toString() + "' style='width:40px;height:40px;' src='https://i.im.ge/2022/06/21/uTll9P.png'><br>";
+                cell1.innerHTML += "מחיר : " + price[i] + "₪";
+                cell1.onclick = function () {
+                    // alert(this.innerHTML);
+                    //window.open();
+                }
+
+                var cell0 = row.insertCell(-1);
+                cell0.style.borderRight = "solid";
+                cell0.innerHTML = "<img id='foward" + i.toString() + "' src='https://i.im.ge/2022/06/20/uQnwgT.png' style='cursor:pointer;width: 40px;height: 40px;'>";
+                cell0.innerHTML += "<a id=afoward" + i.toString() + " style='display:none;'>0^" + imageUrl[i] + "</a>";
+
+                if (imageOne.length == "1") {
+                    cell0.style.visibility = "hidden";
+                }
+                cell0.onclick = function () {
+                    var content = this.innerHTML;
+                    var importentData = content.slice(content.indexOf("display:none") + 15, content.indexOf("</a>"));
+                    var aImportentData = importentData.split('^');
+                    var numberImage = aImportentData[0];
+                    var linkImage = aImportentData[1];
+                    var imageChoose = linkImage.split('☼');
+                    // alert(parseInt(numberImage)+1);
+                    var numberCoulman = content.slice(content.indexOf("id=") + 10, content.indexOf(" src=") - 1);
+                    var centerLinkImage = document.getElementById("products" + numberCoulman).src;
+
+                    var indexImage = imageChoose[parseInt(numberImage) + 1];
+
+                    if (indexImage == undefined) {
+                        indexImage = imageChoose[0];
+                        document.getElementById("afoward" + numberCoulman).innerHTML = "0^" + linkImage;
+                        document.getElementById("aback" + numberCoulman).innerHTML = "0^" + linkImage;
+                        for (var i = imageChoose.length-1; i >= 0; i--) {
+                            if (i != (parseInt(imageChoose.length)).toString()) {
+                                document.getElementById(i.toString() + "point" + numberCoulman).src = "https://i.im.ge/2022/06/21/uTlHy0.png";
+                                document.getElementById(i.toString() + "point" + numberCoulman).style.width = "36px";
+                                document.getElementById(i.toString() + "point" + numberCoulman).style.height = "39px";
+                                document.getElementById(i.toString() + "point" + numberCoulman).style.top = "2px";
+                            }
+                        }
+                        document.getElementById("0" + "point" + numberCoulman).src = "https://i.im.ge/2022/06/21/uTll9P.png";
+                        document.getElementById("0" + "point" + numberCoulman).style.width = "40px";
+                        document.getElementById("0" + "point" + numberCoulman).style.height = "41px";
+                        document.getElementById("0" + "point" + numberCoulman).style.top = "0px";
+
+                    }
+                    else {
+                        document.getElementById("afoward" + numberCoulman).innerHTML = (parseInt(numberImage) + 1).toString() + "^" + linkImage;
+                        document.getElementById("aback" + numberCoulman).innerHTML = (parseInt(numberImage) + 1).toString() + "^" + linkImage;
+                        for (var i = imageChoose.length-1; i >= 0; i--) {
+                            if (i != (parseInt(imageChoose.length)).toString()) {
+                                document.getElementById(i.toString() + "point" + numberCoulman).src = "https://i.im.ge/2022/06/21/uTlHy0.png";
+                                document.getElementById(i.toString() + "point" + numberCoulman).style.width = "36px";
+                                document.getElementById(i.toString() + "point" + numberCoulman).style.height = "39px";
+                                document.getElementById(i.toString() + "point" + numberCoulman).style.top = "2px";
+                            }
+                        }
+                        document.getElementById((parseInt(numberImage) + 1).toString() + "point" + numberCoulman).src = "https://i.im.ge/2022/06/21/uTll9P.png";
+                        document.getElementById((parseInt(numberImage) + 1).toString() + "point" + numberCoulman).style.width = "40px";
+                        document.getElementById((parseInt(numberImage) + 1).toString() + "point" + numberCoulman).style.height = "41px";
+                        document.getElementById((parseInt(numberImage) + 1).toString() + "point" + numberCoulman).style.top = "0px";
+
+                    }
+                    document.getElementById("products" + numberCoulman).src = indexImage;
+                    // alert(document.getElementById("afoward" + numberCoulman).innerHTML);
+
+                }
+
+            }
+
+        }
+    </script>
+
+</head>
+
+<body id="body" onload="displayProducts()">
+
+    <div style="z-index:2;" id="header">
+        <img id="logo" src="https://i.im.ge/2022/06/18/rGzVi1.png">
+    </div>
+
+    <div id="tableDiv" style="position:absolute;margin-top:400px;">
+
+        <table style="margin-left:4px ;" id="displayProducts">
+            <tr></tr>
+            <tr>
+                <td id="firstRow" colspan="6"
+                    style="direction:rtl;font-size:40px;width:320px;background-color:black;color:white;;text-align:center">
+                ברוכים הבאים ל"סייל" <br>אתר מכירות יד שנייה<br> לצפייה בפרטים לחיצה קצרה,<br> להגדלת התמונה לחיצה ארוכה
+            </tr>
+        </table>
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
